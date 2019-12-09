@@ -8,7 +8,7 @@ class Connexion {
     private $db;
 
     public function __construct() {
-        $this->host = '172.21.0.3';
+        $this->host = '172.22.0.3';
         $this->dbname = 'docker';
         $this->username = 'docker';
         $this->password = 'docker';

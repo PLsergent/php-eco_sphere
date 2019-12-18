@@ -40,9 +40,9 @@ You will have to replace the ip address of the mysql docker based on your docker
 
 Execute ```docker ps``` and get the id from the container **eco-mysql**.
 
-Then execute ```docker inspect <container_id>``` and you'll be able to get the ip address amoung all the informations given about your mysql docker.
+Then execute ```docker inspect <container_id>``` and you'll be able to get the ip address amoung all the informations given on your mysql docker.
 
-Now replace in the file.
+Now replace the ip address in the file.
 
 ### App running
 http://localhost

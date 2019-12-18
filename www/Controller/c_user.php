@@ -13,29 +13,58 @@ class c_user {
     }
 
     public function signup() {
-        $page = 'signup';
         require('./View/v_form.php');
     }
 
     public function doCreate() {
         if (isset($_POST['email'])
-            &&isset($_POST['password'])
-            &&isset($_POST['lastName']) 
-            &&isset($_POST['firstName']) 
-            &&isset($_POST['address']) 
-            &&isset($_POST['postalCode']) 
-            &&isset($_POST['city'])) {
+            && isset($_POST['password'])
+            && isset($_POST['lastName']) 
+            && isset($_POST['firstName']) 
+            && isset($_POST['address']) 
+            && isset($_POST['postalCode']) 
+            && isset($_POST['city'])) {
                 
             $alreadyExist = $this->userManager->findByEmail($_POST['email']);
                 
             if (!$alreadyExist) {
                 $newUser = new User($_POST);
                 $this->userManager->create($newUser);
-                $page = 'login';
+                header('Location: index.php?ctrl=user&action=login');
+                exit();
             } else {
-                $error = "ERROR : This email (" . $_POST['email'] . ") is used by another user";
-                $page = 'create';
+                header('Location: index.php?ctrl=user&action=signup&error=email');
+                exit();
             }
         }
+    }
+
+    public function login() {
+        require('./View/v_login.php');
+    }
+
+    public function doLogin() {
+        $user = $this->userManager->findByEmail($_POST['email']);
+
+        if (!$user) {
+            header('Location: index.php?ctrl=user&action=login&error=email');
+            exit();
+        } else {
+            // Password
+            if ($user[0][2] == sha1($_POST['password'])) {
+                $_SESSION["user"] = $user[0][3]; // FirstName
+                header('Location: index.php?ctrl=home&action=display');
+                exit();
+            } else {
+                header('Location: index.php?ctrl=user&action=login&error=password');
+                exit();
+            }
+        }
+    }
+
+    public function logout() {
+        unset($_SESSION["user"]);
+        header('Location: index.php?ctrl=user&action=login');
+        exit();
     }
 }

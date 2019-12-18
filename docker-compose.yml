@@ -4,7 +4,7 @@ services:
   webserver:
     build: 
       context: ./bin/webserver
-    container_name: 'png-webserver'
+    container_name: 'eco-webserver'
     restart: 'always'
     ports:
       - "80:80"
@@ -19,7 +19,7 @@ services:
 
   mysql:
     build: ./bin/mysql
-    container_name: 'png-mysql'
+    container_name: 'eco-mysql'
     restart: 'always'
     ports:
       - "3306:3306"
@@ -33,7 +33,7 @@ services:
       MYSQL_PASSWORD: png
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
-    container_name: 'png-phpmyadmin'
+    container_name: 'eco-phpmyadmin'
     links:
       - mysql
     environment:
@@ -44,7 +44,7 @@ services:
     volumes: 
       - /sessions
   redis:
-    container_name: 'png-redis'
+    container_name: 'eco-redis'
     image: redis:latest
     ports:
       - "6379:6379"

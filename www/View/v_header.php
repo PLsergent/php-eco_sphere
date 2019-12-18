@@ -57,12 +57,21 @@
     <div class="navbar-end">
       <div class="navbar-item">
         <div class="buttons">
+        <?
+          if (empty($_SESSION["user"])) {
+        ?>
           <a href="http://localhost/index.php?ctrl=user&action=signup" class="button is-primary">
             <strong>Sign up</strong>
           </a>
-          <a class="button is-light">
+          <a href="http://localhost/index.php?ctrl=user&action=login" class="button is-light">
             Log in
           </a>
+          <? } else { ?>
+          <p>Bonjour <? echo $_SESSION["user"] ?></p> &nbsp
+          <a href="http://localhost/index.php?ctrl=user&action=logout" class="button is-danger">
+            <strong>Logout</strong>
+          </a>
+          <? } ?>
         </div>
       </div>
     </div>

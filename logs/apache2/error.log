@@ -48,3 +48,12 @@ AH00558: apache2: Could not reliably determine the server's fully qualified doma
 [Wed Dec 18 14:52:13.951955 2019] [mpm_prefork:notice] [pid 1] AH00163: Apache/2.4.25 (Debian) PHP/7.1.20 configured -- resuming normal operations
 [Wed Dec 18 14:52:13.952009 2019] [core:notice] [pid 1] AH00094: Command line: 'apache2 -D FOREGROUND'
 [Wed Dec 18 16:26:34.761671 2019] [mpm_prefork:notice] [pid 1] AH00169: caught SIGTERM, shutting down
+AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 172.23.0.4. Set the 'ServerName' directive globally to suppress this message
+[Wed Dec 18 21:12:33.298077 2019] [mpm_prefork:notice] [pid 1] AH00163: Apache/2.4.25 (Debian) PHP/7.1.20 configured -- resuming normal operations
+[Wed Dec 18 21:12:33.298462 2019] [core:notice] [pid 1] AH00094: Command line: 'apache2 -D FOREGROUND'
+[Wed Dec 18 21:13:31.800190 2019] [mpm_prefork:notice] [pid 1] AH00169: caught SIGTERM, shutting down
+AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 172.23.0.5. Set the 'ServerName' directive globally to suppress this message
+[Wed Dec 18 21:15:57.630305 2019] [mpm_prefork:notice] [pid 1] AH00163: Apache/2.4.25 (Debian) PHP/7.1.20 configured -- resuming normal operations
+[Wed Dec 18 21:15:57.630343 2019] [core:notice] [pid 1] AH00094: Command line: 'apache2 -D FOREGROUND'
+[Wed Dec 18 21:33:14.340540 2019] [php7:error] [pid 22] [client 172.23.0.1:36704] script '/var/www/html/Controller/index.php' not found or unable to stat, referer: http://localhost/index.php?ctrl=user&action=signup
+[Wed Dec 18 21:39:08.388229 2019] [php7:error] [pid 20] [client 172.23.0.1:36746] script '/var/www/html/Controller/index.php' not found or unable to stat, referer: http://localhost/index.php?ctrl=user&action=signup

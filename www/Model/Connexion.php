@@ -8,7 +8,7 @@ class Connexion {
     private $db;
 
     public function __construct() {
-        $this->host = '172.18.0.3'; // Perform a `docker inspect <container_id>` and get ip address from the container
+        $this->host = '172.23.0.2'; // Perform a `docker inspect <container_id>` and get ip address from the container
         $this->dbname = 'docker';
         $this->username = 'docker';
         $this->password = 'docker';

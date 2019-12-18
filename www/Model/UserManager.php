@@ -15,7 +15,7 @@ class UserManager {
             $req->execute(
                 array(
                     ':email' => $user->getEmail(),
-                    ':password' => $user->getPassword(),
+                    ':password' => sha1($user->getPassword()),
                     ':firstName' => $user->getFirstName(),
                     ':lastName' => $user->getLastName(),
                     ':address' => $user->getAddress(),
@@ -50,6 +50,18 @@ class UserManager {
             'SELECT * FROM users'
         );
         $req->execute();
+        return $req->fetchAll();
+    }
+
+    public function findByEmail($p_email) {
+        $req = $this->db->prepare(
+            'SELECT * FROM users WHERE email=:email'
+        );
+        $req->execute(
+            array(
+                ':email' => $p_email
+            )
+        );
         return $req->fetchAll();
     }
 } 

@@ -1,3 +1,8 @@
 <?php
 
-require_once("./View/v_lamp.php");
+class c_lamp {
+
+    public function display() {
+        require("./View/v_lamp.php");
+    }
+}

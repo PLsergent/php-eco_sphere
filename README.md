@@ -2,7 +2,7 @@
 Stay hydrated
 
 ## Sources
-```./www/```
+`./www/`
 
 ## Features
 - User signup (diplay form errors)
@@ -34,13 +34,13 @@ docker-compose up
 ### Replace mysql container Ip address
 
 Go to the file :
-```./www/Model/Connexion.php```
+`./www/Model/Connexion.php`
 
 You will have to replace the ip address of the mysql docker based on your docker ip address.
 
-Execute ```docker ps``` and get the id from the container **eco-mysql**.
+Execute `docker ps` and get the id from the container **eco-mysql**.
 
-Then execute ```docker inspect <container_id>``` and you'll be able to get the ip address amoung all the informations given on your mysql docker.
+Then execute `docker inspect <container_id>` and you'll be able to get the ip address amoung all the informations given on your mysql docker.
 
 Now replace the ip address in the file.
 
